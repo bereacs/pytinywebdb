@@ -2,7 +2,7 @@
 # -*- coding: ascii -*-
 
 """
-pytinywebdb
+tinywebdb
 ~~~~~~~~~~~
 
 TinyWebDB is an ad-hoc API defined by the App Inventor programming environment 
@@ -83,7 +83,7 @@ class TinyWebDB:
     return decoded[2]
 
   def setvalue (self, tag, value):
-    params = urllib.urlencode({'tag': tag, 'value' : str(value)})
+    params = urllib.urlencode({'tag': tag, 'value' : json.dumps(value)})
     API = self.getURL() + "storeavalue"
     result  = urllib.urlopen(API, params)
     read    = result.read()

@@ -16,3 +16,8 @@ for i in range(3):
   print "SET: " + str(tdb.setvalue("counter", i))
   print "GET: " + str(tdb.getvalue("counter"))
 
+print tdb.setvalue("pythonlist", [1, 2, 3])
+print tdb.getvalue("pythonlist")
+
+print tdb.setvalue("nested", [["hi", "bye"], 2, {"a" : 1, "b" : 2}])
+print tdb.getvalue("nested")
