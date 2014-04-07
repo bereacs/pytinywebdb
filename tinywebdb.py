@@ -60,8 +60,11 @@ class TinyWebDB:
   def __init__(self, host, path, dbname=False):
     self.host = host
     self.path = self.addTrailingSlash(path)
-    self.dbname = self.addTrailingSlash(dbname)
-    self.fullPath = self.path + self.dbname
+    self.fullPath = self.path
+    if dbname:
+      self.dbname = self.addTrailingSlash(dbname)
+      self.fullPath = self.fullPath  + self.dbname
+  
     
   # FIXME: Handle URLs nicely. Find a library, or do it yourself.
   def getURL(self):

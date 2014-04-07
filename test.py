@@ -19,5 +19,10 @@ for i in range(3):
 print tdb.setvalue("pythonlist", [1, 2, 3])
 print tdb.getvalue("pythonlist")
 
+print "INSERTING NESTED INTO THE DB"
 print tdb.setvalue("nested", [["hi", "bye"], 2, {"a" : 1, "b" : 2}])
+print tdb.getvalue("nested")
+
+print "DELETING NESTED FROM THE DB"
+print tdb.setvalue("delete", "nested")
 print tdb.getvalue("nested")
